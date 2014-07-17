@@ -54,9 +54,11 @@ function registerPanelListeners(el) {
 }
 
 function onHashChange() {
+    console.log('hashchange', ignoreHashChange);
     if (ignoreHashChange) { return ignoreHashChange = false; }
     textarea.value = decodeURIComponent(location.hash.substr(1));
     compileCode();
+    ignoreHashChange = false;
 }
 
 
