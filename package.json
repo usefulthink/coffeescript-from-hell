@@ -1,0 +1,23 @@
+{
+  "name": "coffeescript-from-hell",
+  "version": "0.0.0",
+  "description": "coffeescript-from-hell ======================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "browserify index.js | uglifyjs -mc > bundle.min.js",
+    "watch": "watchify index.js -o bundle.js -dv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/usefulthink/coffeescript-from-hell.git"
+  },
+  "author": "",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/usefulthink/coffeescript-from-hell/issues"
+  },
+  "dependencies": {
+    "coffee-script": "~1.7.1"
+  }
+}
