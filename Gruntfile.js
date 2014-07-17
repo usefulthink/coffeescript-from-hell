@@ -10,7 +10,7 @@ module.exports = function (grunt) {
   grunt.task.loadNpmTasks('grunt-contrib-jshint');
   grunt.task.loadNpmTasks('grunt-contrib-csslint');
   grunt.task.loadNpmTasks('grunt-scss-lint');
-  grunt.task.loadNpmTasks('grunt-connect');
+  grunt.task.loadNpmTasks('grunt-contrib-connect');
   grunt.task.loadNpmTasks('grunt-closure-compiler');
   grunt.task.loadNpmTasks('grunt-browserify');
   grunt.task.loadNpmTasks('grunt-contrib-clean');
@@ -73,7 +73,9 @@ module.exports = function (grunt) {
     },
     connect: {
       server: {
-        options: {}
+        options: {
+          port: 8080
+        }
       }
     },
     htmlmin: {
