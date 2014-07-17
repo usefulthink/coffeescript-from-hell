@@ -26,6 +26,17 @@
   right: 0;
   left: 0;
   bottom: 100%;
+  background: #c50400;
+  color: #fff;
+  -webkit-transition: bottom 250ms linear;
+          transition: bottom 250ms linear;
+}
+.errorpanel.open {
+  bottom: 0;
+}
+.errorpanel.open .trigger {
+  top: auto;
+  bottom: 0;
 }
 
 .editorpanel {
@@ -38,17 +49,19 @@
 
 .area {
   white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.3;
 }
 
 .input {
   width: 100%;
   height: 100%;
-  border: 0.1em solid #010101;
+  border: 0.1em solid #292928;
   resize: none;
   box-shadow: none;
   border-radius: 0;
-  padding: 4.75em 1.5em 1.5em;
-  background: #dbdbdb;
+  padding: 6em 1.5em 1.5em;
+  background: #c2c2c1;
   font-family: Menlo, Consolas, monospace;
 }
 
@@ -66,13 +79,13 @@
   margin: 0.3em;
   font-size: 1.5em;
   border-radius: 0.3em;
-  background: #dbdbdb;
-  border: 0.1em solid #010101;
+  background: #c2c2c1;
+  border: 0.1em solid #292928;
   cursor: pointer;
 }
 .trigger:hover {
-  color: #dbdbdb;
-  background: #010101;
+  color: #c2c2c1;
+  background: #292928;
 }
 .trigger:focus {
   outline: 0;

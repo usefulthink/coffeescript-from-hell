@@ -1,3 +1,18 @@
+$color-base: #767574;
+
+$color-darkest: darken($color-base, 30%);
+$color-darker: darken($color-base, 20%);
+$color-dark: darken($color-base, 10%);
+$color-light: lighten($color-base, 10%);
+$color-lighter: lighten($color-base, 20%);
+$color-lightest: lighten($color-base, 30%);
+
+
+$time-base: 500ms;
+
+$time-short: $time-base / 2;
+
+
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +41,18 @@
   right: 0;
   left: 0;
   bottom: 100%;
+  background: #c50400;
+  color: #fff;
+  transition: bottom $time-short linear;
+
+  &.open {
+    bottom: 0;
+
+    .trigger {
+      top: auto;
+      bottom: 0;
+    }
+  }
 }
 
 .editorpanel {
@@ -38,17 +65,19 @@
 
 .area {
   white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.3;
 }
 
 .input {
   width: 100%;
   height: 100%;
-  border: 0.1em solid #010101;
+  border: 0.1em solid $color-darkest;
   resize: none;
   box-shadow: none;
   border-radius: 0;
-  padding: 4.75em 1.5em 1.5em;
-  background: #dbdbdb;
+  padding: 6em 1.5em 1.5em;
+  background: $color-lightest;
   font-family: Menlo, Consolas, monospace;
 }
 
@@ -66,13 +95,13 @@
   margin: 0.3em;
   font-size: 1.5em;
   border-radius: 0.3em;
-  background: #dbdbdb;
-  border: 0.1em solid #010101;
+  background: $color-lightest;
+  border: 0.1em solid $color-darkest;
   cursor: pointer;
 
   &:hover {
-    color: #dbdbdb;
-    background: #010101;
+    color: $color-lightest;
+    background: $color-darkest;
   }
 
   &:focus {
