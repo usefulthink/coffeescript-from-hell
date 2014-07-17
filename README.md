@@ -56,7 +56,25 @@ while coffeescript can be done in a beautyful way, a lot of it may
 writing is easy - but reading... #(
 ```
 
-## A little bit of "language" - "features"
+## Make them do things by adding some bootstrap code
+
+[batman](http://coffeescript.org/#try:%23%20bootstrap%0Agotham%3D0%3Bashes%3D8%3Bhelp%3D'%20Batman!'%3Bdont%3D''%3Byou%3Ddie%3D(a)-%3Ea%0Ashall%3D-%3Edocument.write%20gotham%2B%2B%2Fhelp%2C%5C%0A%23%20%2Fbootstrap%0A%0A%23%20orig%20quote%3A%20%22When%20Gotham%20is%20ashes%2C%20you%20have%20my%20permission%20to%20die.%22%0A%23%20%3E%0A%0Aif%20gotham%20is%20ashes%20then%20help%20else%20dont%0Ayou%20shall%20not%20die%20until%20gotham%20is%20ashes%0A%0A%23%20%3C)
+```coffee
+# bootstrap
+gotham=0;ashes=8;help=' Batman!';dont='';you=die=(a)->a
+shall=->document.write gotham++/help,\
+# /bootstrap
+
+# orig quote: "When Gotham is ashes, you have my permission to die."
+# >
+
+if gotham is ashes then help else dont
+you shall not die until gotham is ashes
+
+# <
+```
+
+## A little bit of "language" "features"
 
 ```coffee
 myFunction = (a,b,c) -> console.log a, b, c
