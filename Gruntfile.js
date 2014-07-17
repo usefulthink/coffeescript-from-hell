@@ -45,7 +45,7 @@ module.exports = function (grunt) {
         jsOutputFile: 'js/bundle.min.js',
         maxBuffer: 500,
         options: {
-          'compilation_level': 'ADVANCED_OPTIMIZATIONS'
+          'compilation_level': 'SIMPLE_OPTIMIZATIONS'
         }
       }
     },
