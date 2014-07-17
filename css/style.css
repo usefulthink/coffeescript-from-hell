@@ -9,28 +9,61 @@
   box-sizing: border-box;
 }
 
-.sidepanel {
+.panel {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 100%;
   width: 100%;
-  z-index: 2;
-}
-
-.errorpanel {
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 100%;
   height: 100%;
   z-index: 2;
 }
 
+.sidepanel {
+  top: 0;
+  left: 100%;
+  bottom: 0;
+}
+
+.errorpanel {
+  right: 0;
+  left: 0;
+  bottom: 100%;
+}
+
+.editorpanel {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.area {
+  white-space: pre-wrap;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  border: 0.1em solid #010101;
+  resize: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 4.75em 1.5em 1.5em;
+  background: #dbdbdb;
+  font-family: Menlo, Consolas, monospace;
+}
+
+.output {
+  padding: 1.5em;
+  width: 100%;
+  height: 100%;
+}
+
 .trigger {
   position: absolute;
-  padding: 0.3em;
-  font-size: 1em;
+  z-index: 3;
+  width: 2em;
+  height: 2em;
+  margin: 0.3em;
+  font-size: 1.5em;
   border-radius: 0.3em;
   background: #dbdbdb;
   border: 0.1em solid #010101;
@@ -50,23 +83,4 @@
 .errorpanel .trigger {
   top: 100%;
   left: 0;
-}
-
-.editor {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.editor .area {
-  width: 100%;
-  height: 100%;
-  border: 0.1em solid #010101;
-  resize: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 3em 1em 1em;
-  background: #dbdbdb;
-  font-family: Menlo, Consolas, monospace;
 }
