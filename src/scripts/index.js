@@ -1,6 +1,7 @@
 var compiler    = require('coffee-script');
 var errorObject = { value: null };
 process.stdout  = { isTTY: false };
+var ignoreHashChange = false;
 
 function tryCatch(fn, ctx, args) {
     try {
@@ -33,7 +34,9 @@ function formatError(err) {
     return 'Compile Error: (' + loc + '): ' + err.message;
 }
 
-function onKeyUp() {
+function compileCode() {
+    ignoreHashChange = true;
+    location.hash = encodeURIComponent(textarea.value);
     pre.innerText = warnings.innerText = '';
     var result = compile(textarea.value);
 
@@ -44,28 +47,25 @@ function onKeyUp() {
     }
 }
 
-function addPanelClickListeners(el) {
+function registerPanelListeners(el) {
     el.addEventListener('click', function () {
         el.parentNode.classList.toggle('open');
     }, false);
 }
 
-function shareCode() {
-    location.hash = encodeURIComponent(textarea.value);
+function onHashChange() {
+    if (ignoreHashChange) { return ignoreHashChange = false; }
+    textarea.value = decodeURIComponent(location.hash.substr(1));
+    compileCode();
 }
 
 
 var textarea = document.getElementById('input');
 var warnings = document.getElementById('warnings');
 var pre      = document.getElementById('output');
-var share    = document.getElementById('share-code');
-var copyLink = document.getElementById('copy-link');
 var trigger  = document.querySelectorAll('.trigger');
-var code     = decodeURIComponent(location.hash.substr(1));
 
-textarea.value = code;
-onKeyUp();
-
-textarea.addEventListener('keyup', delay(onKeyUp, 200), false);
-share.addEventListener('click', shareCode, false);
-Array.prototype.slice.call(trigger).forEach(addPanelClickListeners);
+onHashChange();
+window.onhashchange = onHashChange;
+textarea.addEventListener('keyup', delay(compileCode, 200), false);
+Array.prototype.slice.call(trigger).forEach(registerPanelListeners);
