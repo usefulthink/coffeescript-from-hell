@@ -1,4 +1,5 @@
 node_modules/
-.scss-cache
+.sass-cache
 log/
 tmp/
+
