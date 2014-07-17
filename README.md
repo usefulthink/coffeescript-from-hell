@@ -32,7 +32,7 @@ try to drink beer until youre drunk if this isnt happening do not stop unless th
 ```coffee
 drink for each of your friends one pint of beer unless youre drunk then stop or not go to work the next day
 ```
-[robot overlords](http://coffeescript.org/#try:I%20for%20one%20in%20many%20welcome%20our%20new%20robot%20overlords%20when%20they%20have%20cookies%20in%20their%20spaceship) (by @ZauberNerd and @usefulthink)
+[robot overlords](http://coffeescript.org/#try:I%20for%20one%20in%20many%20welcome%20our%20new%20robot%20overlords%20when%20they%20have%20cookies%20in%20their%20spaceship) (by @ZauberNerd and @usefulthink) - [with instrumentation](http://goo.gl/SUk8X7)
 ```coffee
 I for one in many welcome our new robot overlords when they have cookies in their spaceship
 ```
