@@ -1,7 +1,6 @@
-var compiler = require('coffee-script');
+var compiler    = require('coffee-script');
 var errorObject = { value: null };
-
-process.stdout = { isTTY: false };
+process.stdout  = { isTTY: false };
 
 function tryCatch(fn, ctx, args) {
     try {
@@ -29,16 +28,17 @@ function delay(fn, ms) {
     };
 }
 
-
 function formatError(err) {
     var loc = err.location.first_line + ':' + err.location.first_column;
     return 'Compile Error: (' + loc + '): ' + err.message;
 }
 
 
+
 var textarea = document.getElementById('input');
-var pre = document.getElementById('output');
 var warnings = document.getElementById('warnings');
+var trigger  = document.querySelectorAll('.trigger');
+var pre      = document.getElementById('output');
 
 textarea.addEventListener('keyup', delay(function () {
     pre.innerText = warnings.innerText = '';
@@ -50,3 +50,9 @@ textarea.addEventListener('keyup', delay(function () {
         warnings.innerText = formatError(result.error);
     }
 }, 200), false);
+
+Array.prototype.slice.call(trigger).forEach(function (el) {
+    el.addEventListener('click', function () {
+        el.parentNode.classList.toggle('open');
+    }, false);
+});
