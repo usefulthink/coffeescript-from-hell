@@ -51,11 +51,7 @@ function addPanelClickListeners(el) {
 }
 
 function shareCode() {
-    var url = location.protocol + '//' + location.host + location.pathname;
-    copyLink.value = url + '#' + encodeURIComponent(textarea.value);
-    copyLink.classList.toggle('show');
-    copyLink.select();
-    copyLink.focus();
+    location.hash = encodeURIComponent(textarea.value);
 }
 
 
