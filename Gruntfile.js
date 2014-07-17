@@ -33,7 +33,7 @@ module.exports = function (grunt) {
     browserify: {
       dist: {
         files: {
-          'tmp/js/bundle.js': ['index.js']
+          'tmp/js/bundle.js': ['src/scripts/index.js']
         },
         options: {}
       }
@@ -129,7 +129,7 @@ module.exports = function (grunt) {
     'csslint',
     'autoprefixer']);
 
-  grunt.task.registerTask('dev', [
+  grunt.task.registerTask('default', [
     //'clean',
     'build-scripts',
     'build-scss',
