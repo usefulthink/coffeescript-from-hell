@@ -47,6 +47,14 @@ switch your coding style
   if he is fluid then do try to use it for everything in your company
 ```
 
+[about coffeescript](http://goo.gl/VcL5KX)
+```coffee
+while coffeescript can be done in a beautyful way, a lot of it may
+  break unless you pay a lot of attention.
+  thats not how we like it
+
+writing is easy - but reading... #(
+```
 
 ## A little bit of "language" - "features"
 
