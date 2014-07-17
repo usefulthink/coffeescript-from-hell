@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.sidepanel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.errorpanel {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.sidepanel .trigger {
+  top: 0;
+  right: 100%;
+}
+
+.errorpanel .trigger {
+  top: 100%;
+  left: 0;
+}
+
+.trigger {
+  position: absolute;
+  padding: 0.3em;
+  font-size: 1em;
+  border-radius: 0.3em;
+  background: #dbdbdb;
+  border: 0.1em solid #010101;
+  cursor: pointer;
+}
+
+.trigger:hover {
+  color: #dbdbdb;
+  background: #010101;
+}
+
+.trigger:focus {
+  outline: 0;
+}
+
+
+.editor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+
+}
+
+.editor .area {
+  width: 100%;
+  height: 100%;
+  border: 0.1em solid #010101;
+  resize: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 3em 1em 1em;
+  background: #dbdbdb;
+  font-family: Menlo, Consolas, monospace;
+}
