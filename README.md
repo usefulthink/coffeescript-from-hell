@@ -10,6 +10,12 @@ Believe it or not: all of the snippets below are valid coffeescript and mostly c
 
 ```coffee
 Drink a lot for yourself in the pub when you need it - me and my friends dont, do you?
+
+do not try coffeescript if you have alcohol in your blood
+
+throw the ball and try to catch it
+
+do you know if this is the future?
 ```
 
 
