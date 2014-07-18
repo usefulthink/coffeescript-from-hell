@@ -61,9 +61,10 @@ button:focus {
   right: 0;
   left: 0;
   bottom: 100%;
-  -webkit-transition: -webkit-transform 250ms linear;
-          transition: transform 250ms linear;
+  -webkit-transition: -webkit-transform 500ms linear;
+          transition: transform 500ms linear;
   z-index: 2;
+  background: #c53800;
 }
 .errorpanel.has-errors .trigger {
   -webkit-transform: translate3d(0, 0, 0);
@@ -74,8 +75,13 @@ button:focus {
           transform: translate3d(0, 100%, 0);
 }
 .errorpanel.open .trigger {
+  background: #c53800;
+  border-color: #292928;
   -webkit-transform: translate3d(0, -4em, 0);
           transform: translate3d(0, -4em, 0);
+}
+.errorpanel.open .trigger:hover {
+  background: #292928;
 }
 
 .area {
@@ -94,6 +100,11 @@ button:focus {
   padding: 1em 1em 4em;
   background: #292928;
   color: #c2c2c1;
+  -webkit-transition: padding 250ms linear 500ms;
+          transition: padding 250ms linear 500ms;
+}
+.has-errors + .editorpanel .input {
+  padding: 5em 1em 4em;
 }
 
 .output {
@@ -132,15 +143,13 @@ button:focus {
   cursor: pointer;
   overflow: hidden;
   border: 0.2em solid #c53800;
+  top: 100%;
+  left: 0;
+  -webkit-transition: all 250ms linear 500ms;
+          transition: all 250ms linear 500ms;
+  -webkit-transform: translate3d(0, -4em, 0);
+          transform: translate3d(0, -4em, 0);
 }
 .trigger:hover {
   background: #c53800;
-}
-.errorpanel .trigger {
-  top: 100%;
-  left: 0;
-  -webkit-transition: -webkit-transform 250ms linear 500ms;
-          transition: transform 250ms linear 500ms;
-  -webkit-transform: translate3d(0, -4em, 0);
-          transform: translate3d(0, -4em, 0);
 }

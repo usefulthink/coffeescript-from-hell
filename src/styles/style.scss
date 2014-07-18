@@ -84,8 +84,11 @@ button {
   right: 0;
   left: 0;
   bottom: 100%;
-  transition: transform $time-short linear;
+  transition: transform $time-base linear;
   z-index: 2;
+  background: $color-warning;
+
+
 
   &.has-errors {
     .trigger {
@@ -97,7 +100,13 @@ button {
     transform: translate3d(0, 100%, 0);
 
     .trigger {
+      background: $color-warning;
+      border-color: $color-darkest;
       transform: translate3d(0, -4em, 0);
+
+      &:hover {
+        background: $color-darkest;
+      }
 
     }
   }
@@ -123,6 +132,11 @@ button {
   padding: 1em 1em 4em;
   background: $color-darkest;
   color: $color-lightest;
+  transition: padding $time-short linear $time-base;
+
+  .has-errors + .editorpanel & {
+    padding: 5em 1em 4em;
+  }
 }
 
 .output {
@@ -161,15 +175,14 @@ button {
   cursor: pointer;
   overflow: hidden;
   border: 0.2em solid $color-warning;
+  top: 100%;
+  left: 0;
+  transition: all $time-short linear $time-base;
+  transform: translate3d(0, -4em, 0);
 
   &:hover {
     background: $color-warning;
   }
 
-  .errorpanel & {
-    top: 100%;
-    left: 0;
-    transition: transform $time-short linear $time-base;
-    transform: translate3d(0, -4em, 0);
-  }
+
 }
