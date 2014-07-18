@@ -56,11 +56,17 @@ while coffeescript can be done in a beautyful way, a lot of it may
 writing is easy - but reading... #(
 ```
 
-[don't like coffeescript](http://usefulthink.github.io/coffeescript-from-hell/#coffeescript%20is%20not%20my%20kind%20of%20language.%20The%20syntax%20is%20ugly%20and%20not%20understandable%20while%20it%20might%20be%20fun%20for%20people%20in%20ruby%20teams...%20%0Aunless%20he%20is%20a%20good%20developer%20and%20can%20do%20everything%20good%20then%20he%20can%20try%20to%20use%20it%20%0A)(by @pixelass)
+[don't like coffeescript](http://usefulthink.github.io/coffeescript-from-hell/#coffeescript%20is%20not%20my%20kind%20of%20language.%20The%20syntax%20is%20ugly%20and%20not%20understandable%20while%20it%20might%20be%20fun%20for%20people%20in%20ruby%20teams...%20%0Aunless%20he%20is%20a%20good%20developer%20and%20can%20do%20everything%20good%20then%20he%20can%20try%20to%20use%20it%20%0A) (by @pixelass)
 ```coffee
 coffeescript is not my kind of language. The syntax is ugly and not understandable while it might be fun for people in ruby teams... 
 unless he is a good developer and can do everything good then he can try to use it 
 ```
+
+[double negatives](http://usefulthink.github.io/coffeescript-from-hell/#you%20isnt%20not%20true%20in%20real%20and%20i%20isnt%20not%20do%20nothing%20wrong) (by @pixelass)
+```coffee
+you isnt not true in real and i isnt not do nothing wrong
+```
+
 
 ## Famous Quotes
 [evidence](http://coffeescript.org/#try:absence%20of%20evidence%20is%20not%20evidence%20of%20absence%0A%0A~%20Carl%20Sagan) (by @Shoom)
