@@ -153,3 +153,33 @@ myFunction a:1, b:2, c:3
 myFunction 1, b:2, c:3
 myFunction a:1, b, c
 ```
+
+## Other programming languages 
+
+[Clojure](http://usefulthink.github.io/coffeescript-from-hell/#%3B%3Bthis%20is%20valid%20Clojure%3A%3D%3E%0A%0A%20%20(defn%20recur%20%5Bx%5D%0A%20%20(if-not%20(zero%3F%20x)%20%0A%20%20%20%20(recur%20(%2B%20x%20x))%20%0A%20%20%20%20(recur%20(%2B%20x%201))))%0A%0A%20%20(recur%20(1))%0A%0A%0A%20%20(if%20(Boolean.%20false)%0A%20%20%20%20%22logical%20true%22%20%0A%20%20%20%20%22logical%20false%22)%0A%0A%0A%20%20(defn%20copy-file%20%5Bsource-path%20dest-path%5D%20%20%0A%20%20(io%2Fcopy%20(io%2Ffile%20source-path)%20(io%2Ffile%20dest-path)))%0A%0A%0A%20%20(copy-file%20%0A%20%20%22%2Fhome%2Fusername%2Fsquirrel.txt%22%20%0A%20%20%22%2Fhome%2Fusername%2Fburt-reynolds.txt%22)%0A) (by @pixelass)
+
+```coffee
+;;this is valid Clojure:=>
+
+  (defn recur [x]
+  (if-not (zero? x) 
+    (recur (+ x x)) 
+    (recur (+ x 1))))
+
+  (recur (1))
+
+
+  (if (Boolean. false)
+    "logical true" 
+    "logical false")
+
+
+  (defn copy-file [source-path dest-path]  
+  (io/copy (io/file source-path) (io/file dest-path)))
+
+
+  (copy-file 
+  "/home/username/squirrel.txt" 
+  "/home/username/burt-reynolds.txt")
+
+```
