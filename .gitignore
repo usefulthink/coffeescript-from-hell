@@ -3,4 +3,6 @@ node_modules/
 log/
 tmp/
 js/bundle.min.js.report.txt
+*.sublime-project
+*.sublime-workspace
 
