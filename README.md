@@ -6,6 +6,9 @@ Title says it all, doesn't it?
 Believe it or not: all of the snippets below are valid coffeescript and mostly compile into something weird...
 
 
+## Online coffeescript compiler
+[http://usefulthink.github.io/coffeescript-from-hell/](http://usefulthink.github.io/coffeescript-from-hell/) (by @pixelass and @ZauberNerd)
+
 ## Some normal sentences that are totally valid coffeescript
 
 [we don't need it](http://coffeescript.org/#try:Drink%20a%20lot%20for%20yourself%20in%20the%20pub%20when%20you%20need%20it%20-%20me%20and%20my%20friends%20dont%2C%20do%20you%3F) (by @usefulthink)
