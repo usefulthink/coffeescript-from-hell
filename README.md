@@ -72,6 +72,15 @@ you isnt not true in real and i isnt not do nothing wrong
 tomorrow is new Date. now is today while yesterday is not today or tomorrow
 ```
 
+[twitter](http://usefulthink.github.io/coffeescript-from-hell/#if%20you%20tweet%20%40SomeBody%20then%20it%20is%20%20him%20or%20her%20%20in%20that%20tweet...%0A%0Aexamples%3A%20%0A%20%201%3A%20%40GregorAdams%20is%20crazy%20in%20CSS%20and%20CSS%20isnt%20%20CoffeeScriptShit%0A%20%202%3A%20%40ZauberNerd%20is%20awesome%20in%20JavaScript%20and%20does%20not%20like%20CoffeeScript...%0A%0A%20%20) (by @pixelass)
+```coffee
+if you tweet @SomeBody then it is  him or her  in that tweet...
+
+examples: 
+  1: @GregorAdams is crazy in CSS and CSS isnt  CoffeeScriptShit
+  2: @ZauberNerd is awesome in JavaScript and does not like CoffeeScript...
+```
+
 ## Famous Quotes
 [evidence](http://coffeescript.org/#try:absence%20of%20evidence%20is%20not%20evidence%20of%20absence%0A%0A~%20Carl%20Sagan) (by @Shoom)
 ```coffee
