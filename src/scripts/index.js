@@ -53,21 +53,44 @@ function registerPanelListeners(el) {
     }, false);
 }
 
+function onKeyUp() {
+    delay(compileCode, 200)();
+    var position = getCursorPosition();
+    var text = textarea.value;
+    statusbar.position.innerText = position.line + ',' + position.column;
+    statusbar.totalChars.innerText = text.replace('\n', '').length;
+    statusbar.totalLines.innerText = text.split('\n').length;
+}
+
 function onHashChange() {
-    console.log('hashchange', ignoreHashChange);
     if (ignoreHashChange) { return ignoreHashChange = false; }
     textarea.value = decodeURIComponent(location.hash.substr(1));
     compileCode();
     ignoreHashChange = false;
 }
 
+function getCursorPosition() {
+    var selectionStart = textarea.selectionStart;
+    var lines = textarea.value.substr(0, selectionStart).split('\n');
+    return {
+        line: lines.length,
+        column: lines[lines.length - 1].length + 1
+    };
+}
 
-var textarea = document.getElementById('input');
-var warnings = document.getElementById('warnings');
-var pre      = document.getElementById('output');
-var trigger  = document.querySelectorAll('.trigger');
+
+var textarea  = document.getElementById('input');
+var warnings  = document.getElementById('warnings');
+var pre       = document.getElementById('output');
+var trigger   = document.querySelectorAll('.trigger');
+var statusbar = {
+    position: document.getElementById('cursor-position'),
+    fileName: document.getElementById('file-name'),
+    totalLines: document.getElementById('total-lines'),
+    totalChars: document.getElementById('total-chars')
+};
 
 onHashChange();
 window.onhashchange = onHashChange;
-textarea.addEventListener('keyup', delay(compileCode, 200), false);
+textarea.addEventListener('keyup', onKeyUp, false);
 Array.prototype.slice.call(trigger).forEach(registerPanelListeners);

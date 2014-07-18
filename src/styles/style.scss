@@ -87,6 +87,22 @@ $time-short: $time-base / 2;
   height: 100%;
 }
 
+.statusbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em 1em;
+  color: #fff;
+  background: #000;
+  font-weight: bold;
+  font-family: Menlo, Consolas, monospace;
+}
+
+.cursor-position {
+  float: right;
+}
+
 .trigger {
   position: absolute;
   z-index: 3;
