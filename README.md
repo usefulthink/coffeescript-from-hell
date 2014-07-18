@@ -56,6 +56,49 @@ while coffeescript can be done in a beautyful way, a lot of it may
 writing is easy - but reading... #(
 ```
 
+## Famous Quotes
+[evidence](http://coffeescript.org/#try:absence%20of%20evidence%20is%20not%20evidence%20of%20absence%0A%0A~%20Carl%20Sagan) (by @Shoom)
+```coffee
+absence of evidence is not evidence of absence
+
+~ Carl Sagan
+```
+
+[life](http://coffeescript.org/#try:Life%20is%20what%20happens%20while%20you%20are%20busy%20making%20other%20plans%0A%0A~%20John%20Lennon) (by @Shoom)
+```coffee
+Life is what happens while you are busy making other plans
+
+~ John Lennon
+```
+
+[be yourself](http://coffeescript.org/#try:always%20be%20yourself...%20unless%20you%20suck%0A%0A~%20Joss%20Whedon) (by @Shoom)
+```coffee
+always be yourself... unless you suck
+
+~ Joss Whedon
+```
+
+[stay in bed](http://coffeescript.org/#try:Dont%20stay%20in%20bed%20unless%20you%20can%20make%20money%20in%20bed%0A%0A~%20George%20Burns) (by @Shoom)
+```coffee
+Dont stay in bed unless you can make money in bed
+
+~ George Burns
+```
+
+[flying](http://coffeescript.org/#try:Flying%20is%20learning%20how%20to%20throw%20yourself%20at%20the%20ground%20and%20miss%0A%0A~%20Douglas%20Adams) (by @Shoom)
+```coffee
+Flying is learning how to throw yourself at the ground and miss
+
+~ Douglas Adams
+```
+
+[success vs value](http://coffeescript.org/#try:try%20not%20to%20become%20a%20man%20of%20success%2C%20but%20rather%20try%20to%20become%20a%20man%20of%20value%0A%0A~%20Albert%20Einstein)
+```coffee
+try not to become a man of success, but rather try to become a man of value
+
+~ Albert Einstein
+```
+
 ## Make them do things by adding some bootstrap code
 
 [batman](http://coffeescript.org/#try:%23%20bootstrap%0Agotham%3D0%3Bashes%3D8%3Bhelp%3D'%20Batman!'%3Bdont%3D''%3Byou%3Ddie%3D(a)-%3Ea%0Ashall%3D-%3Edocument.write%20gotham%2B%2B%2Fhelp%2C%5C%0A%23%20%2Fbootstrap%0A%0A%23%20orig%20quote%3A%20%22When%20Gotham%20is%20ashes%2C%20you%20have%20my%20permission%20to%20die.%22%0A%23%20%3E%0A%0Aif%20gotham%20is%20ashes%20then%20help%20else%20dont%0Ayou%20shall%20not%20die%20until%20gotham%20is%20ashes%0A%0A%23%20%3C) (by @ZauberNerd and @levito)
