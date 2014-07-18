@@ -9,6 +9,28 @@ Believe it or not: all of the snippets below are valid coffeescript and mostly c
 ## Online coffeescript compiler
 [http://usefulthink.github.io/coffeescript-from-hell/](http://usefulthink.github.io/coffeescript-from-hell/) (by @pixelass and @ZauberNerd)
 
+[Example](http://usefulthink.github.io/coffeescript-from-hell/#this%20is%20a%20compiler%20for%20fun%20in%20CoffeeScript%0A%0Astory%3A%0A%20%20it%20happened%20while%205%20in%20many%20nerds%20drank%20many%20of%20beer%20and%20try%20to%20do%20fun%20while%20they%20play%20in%20CoffeeScript%20until%20this%20is%20what%20is%20the%20result%0A%0Aif%20you%20do%20not%20believe%20in%20this%20magic%20then%20scroll%20right%20and%20see%20for%20yourself%20in%20this%20example%0Ait%20is%20true%0Athis%20is%20valid%20and%20compiles%20in%20JavaScript%0A%0Arecommended%3A-%3E%0A%20%20have%20alcohol%20in%20blood%20for%20fun%20in%20here%0A%20%20it%20is%20best%20if%20it%20is%20beer%20%0A%20%20that%20is%20responsible%20for%20drunk%20in%20head%0A%20%20not%20too%20much%20or%20you%20is%20going%20in%20bed%0A%20%20gin%20and%20tonic%20is%20ok%20if%20it%20is%20better%20for%20you%20in%20taste%0A%20%20also%20not%20too%20much%20of%20it%20or%20you%20is%20a%20waste%0A%0Anow%20try%20to%20play%20for%20yourself%20in%20here) (by @pixelass)
+```coffee
+this is a compiler for fun in CoffeeScript
+
+story:
+  it happened while 5 in many nerds drank many of beer and try to do fun while they play in CoffeeScript until this is what is the result
+
+if you do not believe in this magic then scroll right and see for yourself in this example
+it is true
+this is valid and compiles in JavaScript
+
+recommended:->
+  have alcohol in blood for fun in here
+  it is best if it is beer 
+  that is responsible for drunk in head
+  not too much or you is going in bed
+  gin and tonic is ok if it is better for you in taste
+  also not too much of it or you is a waste
+
+now try to play for yourself in here
+```
+
 ## Some normal sentences that are totally valid coffeescript
 
 [we don't need it](http://coffeescript.org/#try:Drink%20a%20lot%20for%20yourself%20in%20the%20pub%20when%20you%20need%20it%20-%20me%20and%20my%20friends%20dont%2C%20do%20you%3F) (by @usefulthink)
