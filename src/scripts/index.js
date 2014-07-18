@@ -42,7 +42,10 @@ function compileCode() {
 
     if (!result.error) {
         pre.innerText = result.result;
+        warnings.parentNode.classList.remove('has-errors');
+
     } else {
+        warnings.parentNode.classList.add('has-errors');
         warnings.innerText = formatError(result.error);
     }
 }

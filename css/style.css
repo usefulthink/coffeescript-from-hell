@@ -9,34 +9,37 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+  font-family: Menlo, Consolas, monospace;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+input:focus,
+textarea:focus,
+a:focus,
+button:focus {
+  outline: 0;
+}
+
 .panel {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  background: #292928;
+  color: #c2c2c1;
 }
 
 .sidepanel {
   top: 0;
   left: 100%;
   bottom: 0;
-}
-
-.errorpanel {
-  right: 0;
-  left: 0;
-  bottom: 100%;
-  background: #c50400;
-  color: #fff;
-  -webkit-transition: bottom 250ms linear;
-          transition: bottom 250ms linear;
-}
-.errorpanel.open {
-  bottom: 0;
-}
-.errorpanel.open .trigger {
-  top: auto;
-  bottom: 0;
+  overflow: hidden;
 }
 
 .editorpanel {
@@ -44,7 +47,28 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  overflow: hidden;
+}
+
+.errorpanel {
+  right: 0;
+  left: 0;
+  bottom: 100%;
+  -webkit-transition: -webkit-transform 250ms linear;
+          transition: transform 250ms linear;
+  z-index: 2;
+}
+.errorpanel.has-errors .trigger {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.errorpanel.open {
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+}
+.errorpanel.open .trigger {
+  -webkit-transform: translate3d(0, -4em, 0);
+          transform: translate3d(0, -4em, 0);
 }
 
 .area {
@@ -60,9 +84,9 @@
   resize: none;
   box-shadow: none;
   border-radius: 0;
-  padding: 6em 1.5em 1.5em;
-  background: #c2c2c1;
-  font-family: Menlo, Consolas, monospace;
+  padding: 7em 1.5em 1.5em;
+  background: #292928;
+  color: #c2c2c1;
 }
 
 .output {
@@ -77,10 +101,9 @@
   left: 0;
   right: 0;
   padding: 0.5em 1em;
-  color: #fff;
-  background: #000;
+  color: #c2c2c1;
+  background: #292928;
   font-weight: bold;
-  font-family: Menlo, Consolas, monospace;
 }
 
 .cursor-position {
@@ -90,27 +113,25 @@
 .trigger {
   position: absolute;
   z-index: 3;
-  width: 2em;
-  height: 2em;
-  margin: 0.3em;
-  font-size: 1.5em;
+  height: 3em;
+  width: 3em;
+  margin: 0.5em;
+  line-height: 1;
   border-radius: 0.3em;
-  background: #c2c2c1;
-  border: 0.1em solid #292928;
+  background: #292928;
+  color: #c2c2c1;
   cursor: pointer;
+  overflow: hidden;
+  border: 0.2em solid #c53800;
 }
 .trigger:hover {
-  color: #c2c2c1;
-  background: #292928;
-}
-.trigger:focus {
-  outline: 0;
-}
-.sidepanel .trigger {
-  top: 0;
-  right: 100%;
+  background: #c53800;
 }
 .errorpanel .trigger {
   top: 100%;
   left: 0;
+  -webkit-transition: -webkit-transform 250ms linear 500ms;
+          transition: transform 250ms linear 500ms;
+  -webkit-transform: translate3d(0, -4em, 0);
+          transform: translate3d(0, -4em, 0);
 }

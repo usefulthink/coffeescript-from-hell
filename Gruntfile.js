@@ -115,6 +115,12 @@ module.exports = function (grunt) {
       scripts: {
         files: ['src/scripts/*.js'],
         tasks: ['build-scripts']
+      },
+      livereload: {
+        files: ['css/style.css'],
+        options: {
+          livereload: true
+        }
       }
     }
   });

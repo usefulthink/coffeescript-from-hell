@@ -7,10 +7,16 @@ $color-light: lighten($color-base, 10%);
 $color-lighter: lighten($color-base, 20%);
 $color-lightest: lighten($color-base, 30%);
 
+$color-warning: #c53800;
+
 
 $time-base: 500ms;
 
 $time-short: $time-base / 2;
+$time-long: $time-base * 2;
+
+
+$font-code: Menlo, Consolas, monospace;
 
 
 * {
@@ -24,35 +30,40 @@ $time-short: $time-base / 2;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+  font-family: $font-code;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+
+}
+
+input,
+textarea,
+a,
+button {
+  &:focus {
+    outline: 0;
+  }
+}
+
 .panel {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  background: $color-darkest;
+  color: $color-lightest;
 }
 
 .sidepanel {
   top: 0;
   left: 100%;
   bottom: 0;
-}
-
-.errorpanel {
-  right: 0;
-  left: 0;
-  bottom: 100%;
-  background: #c50400;
-  color: #fff;
-  transition: bottom $time-short linear;
-
-  &.open {
-    bottom: 0;
-
-    .trigger {
-      top: auto;
-      bottom: 0;
-    }
-  }
+  overflow: hidden;
 }
 
 .editorpanel {
@@ -60,8 +71,35 @@ $time-short: $time-base / 2;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  overflow: hidden;
 }
+
+.errorpanel {
+  right: 0;
+  left: 0;
+  bottom: 100%;
+  transition: transform $time-short linear;
+  z-index: 2;
+
+  &.has-errors {
+    .trigger {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &.open {
+    transform: translate3d(0, 100%, 0);
+
+    .trigger {
+      transform: translate3d(0, -4em, 0);
+
+    }
+  }
+
+
+}
+
+
 
 .area {
   white-space: pre-wrap;
@@ -76,9 +114,9 @@ $time-short: $time-base / 2;
   resize: none;
   box-shadow: none;
   border-radius: 0;
-  padding: 6em 1.5em 1.5em;
-  background: $color-lightest;
-  font-family: Menlo, Consolas, monospace;
+  padding: 7em 1.5em 1.5em;
+  background: $color-darkest;
+  color: $color-lightest;
 }
 
 .output {
@@ -93,10 +131,9 @@ $time-short: $time-base / 2;
   left: 0;
   right: 0;
   padding: 0.5em 1em;
-  color: #fff;
-  background: #000;
+  color: $color-lightest;
+  background: $color-darkest;
   font-weight: bold;
-  font-family: Menlo, Consolas, monospace;
 }
 
 .cursor-position {
@@ -106,31 +143,25 @@ $time-short: $time-base / 2;
 .trigger {
   position: absolute;
   z-index: 3;
-  width: 2em;
-  height: 2em;
-  margin: 0.3em;
-  font-size: 1.5em;
+  height: 3em;
+  width: 3em;
+  margin: 0.5em;
+  line-height: 1;
   border-radius: 0.3em;
-  background: $color-lightest;
-  border: 0.1em solid $color-darkest;
+  background: $color-darkest;
+  color: $color-lightest;
   cursor: pointer;
+  overflow: hidden;
+  border: 0.2em solid $color-warning;
 
   &:hover {
-    color: $color-lightest;
-    background: $color-darkest;
-  }
-
-  &:focus {
-    outline: 0;
-  }
-
-  .sidepanel & {
-    top: 0;
-    right: 100%;
+    background: $color-warning;
   }
 
   .errorpanel & {
     top: 100%;
     left: 0;
+    transition: transform $time-short linear $time-base;
+    transform: translate3d(0, -4em, 0);
   }
 }
