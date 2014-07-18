@@ -67,6 +67,10 @@ unless he is a good developer and can do everything good then he can try to use 
 you isnt not true in real and i isnt not do nothing wrong
 ```
 
+[timetravel](http://usefulthink.github.io/coffeescript-from-hell/#tomorrow%20is%20new%20Date.%20now%20is%20today%20while%20yesterday%20is%20not%20today%20or%20tomorrow) (by @pixelass)
+```coffee
+tomorrow is new Date. now is today while yesterday is not today or tomorrow
+```
 
 ## Famous Quotes
 [evidence](http://coffeescript.org/#try:absence%20of%20evidence%20is%20not%20evidence%20of%20absence%0A%0A~%20Carl%20Sagan) (by @Shoom)
