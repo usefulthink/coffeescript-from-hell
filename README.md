@@ -87,6 +87,12 @@ coffeescript is not my kind of language. The syntax is ugly and not understandab
 unless he is a good developer and can do everything good then he can try to use it 
 ```
 
+[feed dog or cat](http://usefulthink.github.io/coffeescript-from-hell/#feed%20dog%20if%20dog%20is%20hungry%20unless%20cat%20is%20hungry%0Aif%20cat%20is%20hungry%20then%20feed%20cat%20and%20do%20not%20feed%20dog%20until%20cat%20is%20not%20hungry%20and%20only%20feed%20dog%20when%20cat%20is%20not%20hungry) (by @pixelass)
+```coffee
+feed dog if dog is hungry unless cat is hungry
+if cat is hungry then feed cat and do not feed dog until cat is not hungry and only feed dog when cat is not hungry
+```
+
 [double negatives](http://usefulthink.github.io/coffeescript-from-hell/#you%20isnt%20not%20true%20in%20real%20and%20i%20isnt%20not%20do%20nothing%20wrong) (by @pixelass)
 ```coffee
 you isnt not true in real and i isnt not do nothing wrong
