@@ -42,9 +42,11 @@ function compileCode() {
 
     if (!result.error) {
         pre.innerText = result.result;
+        sidePanel.classList.add('can-run');
         warnings.parentNode.classList.remove('has-errors');
 
     } else {
+        sidePanel.classList.remove('can-run');
         warnings.parentNode.classList.add('has-errors');
         warnings.innerText = formatError(result.error);
     }
@@ -56,8 +58,19 @@ function registerPanelListeners(el) {
     }, false);
 }
 
+function runScript(el) {
+    el.addEventListener('click', function () {
+        var result = compile(textarea.value);
+        eval(result.result);
+    }, false);
+}
+
 function onKeyUp() {
     delay(compileCode, 200)();
+    updateStatusbar();
+}
+
+function updateStatusbar () {
     var position = getCursorPosition();
     var text = textarea.value;
     statusbar.position.innerText = position.line + ',' + position.column;
@@ -85,6 +98,8 @@ function getCursorPosition() {
 var textarea  = document.getElementById('input');
 var warnings  = document.getElementById('warnings');
 var pre       = document.getElementById('output');
+var sidePanel = document.getElementById('sidepanel');
+var runButton = document.querySelectorAll('.run-script');
 var trigger   = document.querySelectorAll('.trigger');
 var statusbar = {
     position: document.getElementById('cursor-position'),
@@ -96,4 +111,7 @@ var statusbar = {
 onHashChange();
 window.onhashchange = onHashChange;
 textarea.addEventListener('keyup', onKeyUp, false);
+textarea.addEventListener('click', updateStatusbar, false);
+textarea.addEventListener('focus', updateStatusbar, false);
 Array.prototype.slice.call(trigger).forEach(registerPanelListeners);
+Array.prototype.slice.call(runButton).forEach(runScript);

@@ -10,8 +10,23 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: #292928;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 0.125em solid #292928;
+  background: #8f8f8e;
+  border-radius: 0.5em;
+}
+
 html {
-  font-size: 16px;
+  font-size: 14px;
   font-family: Menlo, Consolas, monospace;
 }
 
@@ -36,17 +51,46 @@ button:focus {
 
 .panel {
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 100%;
   background: #292928;
   color: #c2c2c1;
 }
+@media only screen and (max-width: 60rem) {
+  .panel {
+    width: 100%;
+  }
+}
 
 .sidepanel {
   top: 0;
-  left: 100%;
+  left: 50%;
   bottom: 0;
   overflow: hidden;
+  border-left: 1px solid #c2c2c1;
+  background: #00c575;
+}
+.sidepanel .output {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #292928;
+  -webkit-transition: bottom 250ms 250ms;
+          transition: bottom 250ms 250ms;
+}
+.sidepanel.can-run .run-script {
+  -webkit-transform: translate3d(0, -4em, 0);
+          transform: translate3d(0, -4em, 0);
+}
+.sidepanel.can-run .output {
+  bottom: 4em;
+}
+@media only screen and (max-width: 60rem) {
+  .sidepanel {
+    left: 100%;
+  }
 }
 
 .editorpanel {
@@ -62,27 +106,20 @@ button:focus {
   right: 0;
   left: 0;
   bottom: 100%;
-  -webkit-transition: -webkit-transform 500ms linear;
-          transition: transform 500ms linear;
+  height: auto;
+  padding-bottom: 3em;
+  -webkit-transition: -webkit-transform 250ms 250ms;
+          transition: transform 250ms 250ms;
   z-index: 2;
   background: #c53800;
 }
-.errorpanel.has-errors .trigger {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+.errorpanel.has-errors {
+  -webkit-transform: translate3d(0, 4em, 0);
+          transform: translate3d(0, 4em, 0);
 }
 .errorpanel.open {
   -webkit-transform: translate3d(0, 100%, 0);
           transform: translate3d(0, 100%, 0);
-}
-.errorpanel.open .trigger {
-  background: #c53800;
-  border-color: #292928;
-  -webkit-transform: translate3d(0, -4em, 0);
-          transform: translate3d(0, -4em, 0);
-}
-.errorpanel.open .trigger:hover {
-  background: #292928;
 }
 
 .area {
@@ -92,8 +129,12 @@ button:focus {
 }
 
 .input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 2em;
   width: 100%;
-  height: 100%;
   border: 0.1em solid #292928;
   resize: none;
   box-shadow: none;
@@ -101,8 +142,8 @@ button:focus {
   padding: 1em 1em 4em;
   background: #292928;
   color: #c2c2c1;
-  -webkit-transition: padding 250ms linear 500ms;
-          transition: padding 250ms linear 500ms;
+  -webkit-transition: padding 250ms 250ms;
+          transition: padding 250ms 250ms;
 }
 .has-errors + .editorpanel .input {
   padding: 5em 1em 4em;
@@ -111,7 +152,6 @@ button:focus {
 .output {
   padding: 1.5em;
   width: 100%;
-  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -125,32 +165,50 @@ button:focus {
   color: #c2c2c1;
   background: #292928;
   font-weight: bold;
+  border-top: 1px solid #c2c2c1;
 }
 
 .cursor-position {
   float: right;
 }
 
+.run-script,
 .trigger {
   position: absolute;
   z-index: 3;
   height: 3em;
   width: 3em;
+  top: 100%;
+  left: 0;
   margin: 0.5em;
   line-height: 1;
   border-radius: 0.3em;
-  background: #292928;
-  color: #c2c2c1;
   cursor: pointer;
   overflow: hidden;
-  border: 0.2em solid #c53800;
-  top: 100%;
-  left: 0;
-  -webkit-transition: all 250ms linear 500ms;
-          transition: all 250ms linear 500ms;
+  -webkit-transition-property: -webkit-transform;
+          transition-property: transform;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-delay: 250ms;
+          transition-delay: 250ms;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.trigger {
+  border: 0.2em solid #292928;
   -webkit-transform: translate3d(0, -4em, 0);
           transform: translate3d(0, -4em, 0);
 }
 .trigger:hover {
-  background: #c53800;
+  background: #292928;
+}
+
+.run-script {
+  border: 0.2em solid #292928;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.run-script:hover {
+  background: #292928;
 }

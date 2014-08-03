@@ -25,6 +25,7 @@
   "dojo": false,
 
   "predef": [ // Custom globals.
+    "process",
     // requireJs
     "define",
     "require",
@@ -45,7 +46,7 @@
 
   // EcmaScript 5.
   "es3": true, // Code needs to adhere to ECMAScript 3 specification to be executable in older browsers—such as Internet Explorer 6/7/8/9
-  "strict": true, // Require `use strict` pragma in every file.
+  "strict": false, // Require `use strict` pragma in every file.
   "globalstrict": false, // Allow global "use strict" (also enables 'strict').
 
 
@@ -54,15 +55,15 @@
   "laxbreak": false, // Tolerate unsafe line breaks e.g. `return [\n] x` without semicolons.
   "laxcomma": false, // Tolerate option suppresses warnings about comma-first coding style
   "bitwise": true, // Prohibit bitwise operators (&, |, ^, etc.).
-  "boss": false, // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
+  "boss": true, // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
   "curly": true, // Require {} for every new block or scope.
   "eqeqeq": true, // Require triple equals i.e. `===`.
   "eqnull": false, // Tolerate use of `== null`.
-  "evil": false, // Tolerate use of `eval`.
+  "evil": true, // Tolerate use of `eval`.
   "expr": true, // Tolerate `ExpressionStatement` as Programs.
   "forin": false, // Tolerate `for in` loops without `hasOwnPrototype`.
   "immed": true, // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
-  "latedef": true, // Prohipit variable use before definition.
+  "latedef": false, // Prohipit variable use before definition.
   "loopfunc": false, // Allow functions to be defined within loops.
   "noarg": true, // Prohibit use of `arguments.caller` and `arguments.callee`.
   "regexp": false, // Prohibit `.` and `[^...]` in regular expressions.
@@ -76,7 +77,7 @@
 
   // Personal styling prefrences.
   "indent": 2, // Indentation
-  "camelcase": true, // This option allows you to force all variable names to use either camelCase style or UPPER_CASE with underscores.
+  "camelcase": false, // This option allows you to force all variable names to use either camelCase style or UPPER_CASE with underscores.
   "smarttabs": false, // This option suppresses warnings about mixed tabs and spaces when the latter are used for alignmnent only. The technique is called SmartTabs.
   "newcap": true, // Require capitalization of all constructor functions e.g. `new F()`.
   "noempty": true, // Prohipit use of empty blocks.

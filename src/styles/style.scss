@@ -8,7 +8,8 @@ $color-lighter: lighten($color-base, 20%);
 $color-lightest: lighten($color-base, 30%);
 
 $color-warning: #c53800;
-
+$color-run: #00c575;
+$scrollbar-size: 0.5em;
 
 $time-base: 500ms;
 
@@ -31,8 +32,24 @@ $font-code: Menlo, Consolas, monospace;
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: $scrollbar-size;
+  height: $scrollbar-size;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-darkest;
+
+}
+
+::-webkit-scrollbar-thumb {
+  border: $scrollbar-size / 4 solid $color-darkest;
+  background: $color-light;
+  border-radius: $scrollbar-size;
+}
+
 html {
-  font-size: 16px;
+  font-size: 14px;
   font-family: $font-code;
 }
 
@@ -59,17 +76,47 @@ button {
 
 .panel {
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 100%;
   background: $color-darkest;
   color: $color-lightest;
+  @media only screen and (max-width: 60rem) {
+    width: 100%;
+  }
 }
 
 .sidepanel {
   top: 0;
-  left: 100%;
+  left: 50%;
   bottom: 0;
   overflow: hidden;
+  border-left: 1px solid $color-lightest;
+  background: $color-run;
+
+  .output {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-darkest;
+    transition: bottom $time-short $time-short;
+  }
+
+  &.can-run {
+    .run-script {
+      transform: translate3d(0, -4em, 0);
+    }
+
+    .output {
+      bottom: 4em;
+      //transform: translate3d(0, -4em, 0);
+    }
+  }
+
+  @media only screen and (max-width: 60rem) {
+    left: 100%;
+  }
 }
 
 .editorpanel {
@@ -85,34 +132,24 @@ button {
   right: 0;
   left: 0;
   bottom: 100%;
-  transition: transform $time-base linear;
+  height: auto;
+  padding-bottom: 3em;
+  transition: transform $time-short $time-short;
   z-index: 2;
   background: $color-warning;
 
 
-
   &.has-errors {
+    transform: translate3d(0, 4em, 0);
+
     .trigger {
-      transform: translate3d(0, 0, 0);
+      //transform: translate3d(0, 0, 0);
     }
   }
 
   &.open {
     transform: translate3d(0, 100%, 0);
-
-    .trigger {
-      background: $color-warning;
-      border-color: $color-darkest;
-      transform: translate3d(0, -4em, 0);
-
-      &:hover {
-        background: $color-darkest;
-      }
-
-    }
   }
-
-
 }
 
 
@@ -124,8 +161,12 @@ button {
 }
 
 .input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 2em;
   width: 100%;
-  height: 100%;
   border: 0.1em solid $color-darkest;
   resize: none;
   box-shadow: none;
@@ -133,7 +174,7 @@ button {
   padding: 1em 1em 4em;
   background: $color-darkest;
   color: $color-lightest;
-  transition: padding $time-short linear $time-base;
+  transition: padding $time-short  $time-short;
 
   .has-errors + .editorpanel & {
     padding: 5em 1em 4em;
@@ -143,9 +184,9 @@ button {
 .output {
   padding: 1.5em;
   width: 100%;
-  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+
 }
 
 .statusbar {
@@ -157,33 +198,51 @@ button {
   color: $color-lightest;
   background: $color-darkest;
   font-weight: bold;
+  border-top: 1px solid $color-lightest;
 }
 
 .cursor-position {
   float: right;
 }
 
+.run-script,
 .trigger {
   position: absolute;
   z-index: 3;
   height: 3em;
   width: 3em;
+  top: 100%;
+  left: 0;
   margin: 0.5em;
   line-height: 1;
   border-radius: 0.3em;
-  background: $color-darkest;
-  color: $color-lightest;
   cursor: pointer;
   overflow: hidden;
-  border: 0.2em solid $color-warning;
-  top: 100%;
-  left: 0;
-  transition: all $time-short linear $time-base;
+  transition-property: transform;
+  transition-duration: $time-short;
+  transition-delay: $time-short;
+  transform: translate3d(0, 0, 0);
+}
+
+
+.trigger {
+  border: 0.2em solid $color-darkest;
+  //background: $color-darkest;
   transform: translate3d(0, -4em, 0);
 
   &:hover {
-    background: $color-warning;
+    background: $color-darkest;
   }
 
+}
+
+.run-script {
+  border: 0.2em solid $color-darkest;
+  //background: $color-run;
+  transform: translate3d(0, 0, 0);
+
+  &:hover {
+    background: $color-darkest;
+  }
 
 }
